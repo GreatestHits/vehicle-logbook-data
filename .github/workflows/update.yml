@@ -39,7 +39,7 @@ jobs:
           for f in oil/latest.json oil/history.json oil/adjustments.json; do
             curl -s -m 30 "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@master/$f" > /dev/null || true
           done
-      - name: 同步到 Gitee 镜像
+      - name: 同步到 Gitee 私有备份
         env:
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
         run: |

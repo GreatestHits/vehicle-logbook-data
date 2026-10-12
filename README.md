@@ -1,7 +1,8 @@
 # vehicle-logbook-data
 
 行车账本（DriveLedger）App 的公开数据：全国各省成品油最高零售价、调价记录、法定节假日。
-由 GitHub Actions 每天北京时间 08:30、20:30 自动更新，并同步到 Gitee 镜像。App 只读，不含任何用户数据。
+由 GitHub Actions 每天北京时间 08:30、20:30 自动更新。App 经 jsDelivr / GitHub raw 只读，不含任何用户数据。
+（同步到 Gitee 私有仓库仅作备份：Gitee 不允许把仓库 raw 文件当作 App 数据源。）
 
 | 文件 | 内容 |
 |---|---|
@@ -14,7 +15,7 @@
 
 ## 维护
 
-- 仓库 Secrets：`JUHE_KEY`（聚合数据 Key）、`GITEE_TOKEN`（Gitee 私人令牌，用于同步镜像，可选）。
+- 仓库 Secrets：`JUHE_KEY`（聚合数据 Key）、`GITEE_TOKEN`（Gitee 私人令牌，同步私有备份，可选；删除即停止同步）。
 - 手动运行：Actions → 更新油价数据 → Run workflow。
 - 脚本源文件在主项目 `tools/data-repo/`，修改后复制到本仓库。
 - 仓库长期没有提交时 GitHub 会停用定时任务；每次运行都会更新 `updatedAt` 并提交，正常不会停。
