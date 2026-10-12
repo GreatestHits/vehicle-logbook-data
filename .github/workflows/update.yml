@@ -33,6 +33,12 @@ jobs:
           git add -A
           git diff --cached --quiet || git commit -m "数据更新 $(TZ=Asia/Shanghai date +'%F %H:%M')"
           git push
+      - name: 刷新 jsDelivr 缓存
+        # jsDelivr 对 @master 最多缓存约 12 小时，更新后主动刷新，App 才能尽快拿到新价格
+        run: |
+          for f in oil/latest.json oil/history.json oil/adjustments.json; do
+            curl -s -m 30 "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@master/$f" > /dev/null || true
+          done
       - name: 同步到 Gitee 镜像
         env:
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
