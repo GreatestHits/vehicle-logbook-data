@@ -1,7 +1,13 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-10-16T12:46:36+08:00",
+ "updatedAt": "2026-10-17T00:50:03+08:00",
  "items": [
+  {
+   "window": "2026-10-15",
+   "direction": "stranded",
+   "gasolinePerTon": null,
+   "source": "价格未变推算"
+  },
   {
    "window": "2026-09-24",
    "direction": "up",
