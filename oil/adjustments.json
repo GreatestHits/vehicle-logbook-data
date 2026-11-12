@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-12T15:28:47+08:00",
+ "updatedAt": "2026-11-13T04:13:16+08:00",
  "items": [
   {
    "window": "2026-10-29",
@@ -129,6 +129,6 @@
    "source": "公告"
   }
  ],
- "nextWindow": "2026-11-12",
+ "nextWindow": "2026-11-26",
  "trend": null
 }
